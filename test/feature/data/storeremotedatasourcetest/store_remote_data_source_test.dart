@@ -9,34 +9,10 @@ import 'store_remote_data_source_test.mocks.dart';
 
 @GenerateMocks(
   [
-    StoreLocalDataSource,
+
     StoreRemoteDataSource,
   ],
 )
 void main() {
-  late MockStoreLocalDataSource mockDataSource;
-  final tCategoryModel = CategoryModel(listProductCategory: []);
-  setUp(
-    () {
-      mockDataSource = MockStoreLocalDataSource();
-    },
-  );
-
-  group(
-    'group for test implementation responses',
-    () {
-      test(
-        'should be a array of category',
-        () async {
-          //arrange
-          when(mockDataSource.getAllCategory())
-              .thenAnswer((_) async => tCategoryModel);
-          //act
-          final response = await mockDataSource.getAllCategory();
-          //expect
-          expect(response, tCategoryModel);
-        },
-      );
-    },
-  );
+  
 }
